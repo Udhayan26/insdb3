@@ -1,18 +1,14 @@
 <?php
+
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\InscriptionController;
 
-Route::get('/', function () {
-    return view('home');
-});
+// Dashboard Home
+Route::get('/', [InscriptionController.php, 'index']);
 
-Route::get('/books', function () {
-    return view('books');
-});
+// Location Hierarchy (State > District > Taluk > Village)
+Route::get('/location', [InscriptionController::class, 'location']);
 
-Route::get('/location', function () {
-    return view('location');
-});
-
-Route::get('/map', function () {
-    return view('map');
-});
+// Placeholders for other sections
+Route::view('/books', 'books');
+Route::view('/map', 'map');
