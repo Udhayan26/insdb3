@@ -1,3 +1,4 @@
+<?php
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -5,13 +6,13 @@ Route::get('/', function () {
 });
 
 Route::get('/books', function () {
-    return "Books Page - Coming Soon";
+    return view('books');
 });
 
 Route::get('/location', function () {
-    return "Location Hierarchy Page - Coming Soon";
+    return view('location');
 });
 
 Route::get('/map', function () {
-    return "GIS Map Page - Coming Soon";
+    return view('map');
 });
